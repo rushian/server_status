@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group(['middleware' => ['web']], function(){
+	Route::get('servidores', 'Servidores@index');
+});
+

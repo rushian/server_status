@@ -18,7 +18,7 @@ class CreateServidorsTable extends Migration
             $table->string('servidor',40);
             $table->string('ip',15);
             $table->smallInteger('status');
-            $table->integer('id_usuario')->unsigned()->index();
+            $table->integer('id_usuario')->unsigned()->index()->default(2);
             $table->timestamps();
         });
     }

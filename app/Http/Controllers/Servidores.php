@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Servidor;
+use App\Http\Controllers\Controller;
 
 class Servidores extends Controller
 {
@@ -13,7 +15,9 @@ class Servidores extends Controller
      */
     public function index()
     {
-        //
+        $servers = Servidor::with('user')->get();   
+        
+        return view ('servidores.index', compact('servers'));
     }
 
     /**
@@ -43,10 +47,10 @@ class Servidores extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Servidores $servidor)
     {
-        //
-    }
+
+        return view('servidores.show',compact('serrvidor'));    }
 
     /**
      * Show the form for editing the specified resource.

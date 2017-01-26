@@ -18,7 +18,6 @@ class ServidoresTableSeeder extends Seeder
             'status' => 0,
             'id_usuario'=> 1,
             'created_at'=> date("Y-m-d H:i:s"),
-            
         	],
 			[
             'servidor'=>'ROCK',
@@ -26,8 +25,6 @@ class ServidoresTableSeeder extends Seeder
             'status' => 0,
             'id_usuario'=> 1,
             'created_at'=> date("Y-m-d H:i:s"),
-            
-
         	],
 			[
             'servidor'=>'WATER',
@@ -35,9 +32,7 @@ class ServidoresTableSeeder extends Seeder
             'status' => 0,
             'id_usuario'=> 1,
             'created_at'=> date("Y-m-d H:i:s"),
-            
         	]
-
         ]);
     }
 }
