@@ -70,9 +70,11 @@ class Servidores extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Servidor $servidor)
     {
-        //
+        $servidor->update($request->all());
+        
+        return redirect('servidores');
     }
 
     /**

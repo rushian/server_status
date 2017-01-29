@@ -11,15 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => ['web']], function(){
 	Route::get('servidores', 'Servidores@index');
+	Route::get('/', function () {
+  	  return view('welcome');
+	});
+
+	Route::patch('servidores/{servidor}','Servidores@update');
+	Auth::routes();
+
+	//Route::get('/home', 'HomeController@index');
+	Route::get('/home', 'Servidores@index');
 });
 
