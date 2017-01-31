@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Servidor;
+use DB;
 use App\Http\Controllers\Controller;
 
 class Servidores extends Controller
@@ -13,10 +14,15 @@ class Servidores extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
-        $servers = Servidor::with('user')->get();   
-        
+        $servers = Servidor::with('user')->orderBy('servidor')->get();  
         return view ('servidores.index', compact('servers'));
     }
 
@@ -27,7 +33,7 @@ class Servidores extends Controller
      */
     public function create()
     {
-        //
+        return view('servidores.create');
     }
 
     /**
@@ -38,7 +44,16 @@ class Servidores extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'servidor' =>  'required|min:3',
+            'ip' =>  'required|min:8'
+        ]);
+        //$servidor = new Servidor($request->all());
+        
+        $this->save($servidor);
+        //$card->addNote($note, 1);
+
+        return back();
     }
 
     /**
@@ -47,10 +62,14 @@ class Servidores extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Servidores $servidor)
+    public function show()
     {
+        $servers = Servidor::with('user')->orderBy('servidor')->get();   
+        
+        return view ('servidores.show', compact('servers'));
 
-        return view('servidores.show',compact('serrvidor'));    }
+        
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -85,6 +104,7 @@ class Servidores extends Controller
      */
     public function destroy($id)
     {
-        //
+            DB::table("servidors")->where('id',$id)->delete();
+            return redirect('servidores.show')->with('success','Servidor deletado com sucesso!');
     }
 }

@@ -21,11 +21,11 @@
 							<th>	&nbsp;	 </th>
 						</tr>
 
-						@foreach ($servers as $serve) 
+						@foreach ($servers as $serve)
 							<tr>
 								<td> {{$serve -> servidor}}</td>
 								<td> {{$serve -> ip}}</td>
-								<td> 
+								<td>
 									@if ($serve -> updated_at != null)
 										{{date('d-m-Y H:i:s', strtotime($serve -> updated_at))}}
 									@else
@@ -33,11 +33,11 @@
 									@endif
 								</td>
 
-								<td> <?php $user =  DB::table('users')->where('id','=',$serve->id_usuario)->get() ;?>
+								<td> <?php $user = DB::table('users')->where('id', '=', $serve->id_usuario)->get();?>
 
 									@foreach ($user as $u)
 											{{$u -> name}}
-									@endforeach	
+									@endforeach
 								 </td>
 								 <td>
 									<form  class="form-inline" method="POST" action="/servidores/{{ $serve->id }}">
@@ -60,11 +60,11 @@
 							</tr>
 						@endforeach
 						</table>
-					
+
 					</div>
 					<div class="col-md-12">
-					* Antes de entrar 
-					<input class="btn btn-xs btn-primary" type="button" value="atualize" onclick="window.location.reload()"> 
+					* Antes de entrar
+					<input class="btn btn-xs btn-primary" type="button" value="atualize" onclick="window.location.reload()">
 					o navegador
 					</div>
                 </div>

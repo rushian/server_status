@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Servidor extends Model
 {
-	protected $fillable = ['id_usuario', 'updated_at'];
+	protected $fillable = ['id_usuario','ip','servidor', 'updated_at'];
 
     public function user()
     {

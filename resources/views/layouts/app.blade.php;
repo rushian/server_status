@@ -37,7 +37,7 @@
                     <!-- Branding Image -->
 
                     <a class="navbar-brand" href="{{ url('servidores') }}">
-                        {{ config('app.name', 'Server Status') }} 
+                        {{ config('app.name', 'Server Status') }}
                     </a>
                     <a class="navbar-brand text-uppercase" href="{{ url('servidores.show') }}" style="font-size: 12px;">
                         Cadastro de Servidores
