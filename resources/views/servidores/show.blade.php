@@ -49,10 +49,7 @@
 									@endforeach	
 								 </td>
 								 <td>
-									<form  class="form-inline" method="POST" action="/servidores/{{ $serve->id }}">
-									{{ method_field('PATCH') }}
-							 		<button type="submit" class="btn btn-xs btn-warning">Editar</button>
-									</form>
+							 		<a class="btn btn-xs btn-warning" href="/servidores/{{ $serve->id }}">Editar</a>
 								 </td>
 								 <td>
 									<form  class="form-inline" method="POST" action="/servidores/{{ $serve->id }}">

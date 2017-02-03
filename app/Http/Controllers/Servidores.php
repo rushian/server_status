@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 use App\Servidor;
 use DB;
 use App\Http\Controllers\Controller;
@@ -44,16 +47,28 @@ class Servidores extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'servidor' =>  'required|min:3',
-            'ip' =>  'required|min:8'
-        ]);
-        //$servidor = new Servidor($request->all());
+        // $this->validate($request,[
+        //     'servidor' =>  'required|min:3',
+        //     'ip' =>  'required|min:8'
+        // ]);
+        // $servidor = new Servidor($request->all());
         
-        $this->save($servidor);
-        //$card->addNote($note, 1);
+// validate
+        // read more on validation at http://laravel.com/docs/validation
+        
+            // store
+            $servidor = new Servidor;
+            $servidor->servidor       = Input::get('servidor');
+            $servidor->ip             = Input::get('ip');
+            $servidor->id_usuario     = Input::get('id_usuario');
 
-        return back();
+            $servidor->save();
+            // redirect
+            //Session::flash('message', 'Servidor cadastrado com sucesso');
+            return Redirect::to('servidores.show');
+           //return "teste";
+        
+
     }
 
     /**
