@@ -85,19 +85,5 @@
 
         @yield('content')
     </div>
-
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
-    <script>
-       function ConfirmDelete()
-       {
-           var x = confirm("Tem certeza que deseja excluir?");
-           if (x)
-               return true;
-           else
-               return false;
-       }
-
-    </script>
 </body>
 </html>

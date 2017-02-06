@@ -17,15 +17,18 @@ Route::group(['middleware' => ['web']], function(){
 	Route::get('servidores', 'Servidores@index');
 	Route::get('servidores.show', 'Servidores@show');
 	Route::get('servidores.create', 'Servidores@create');
-	Route::get('servidores.edit', 'Servidores@edit');
+	Route::get('servidores/{servidor}/edit','Servidores@edit');
+	//Route::get('servidores.edit', 'Servidores@edit');
 	Route::get('/', function () {
   	  return view('welcome');
 	});
 
 	Route::post('criarServidor', 'Servidores@store');
-	Route::patch('editarServidor', 'Servidores@edit');
+	
+	Route::patch('editarServidor/{servidor}', 'Servidores@atualizar');
 
 	Route::patch('servidores/{servidor}','Servidores@update');
+
 	Route::delete('servidores/{servidor}','Servidores@destroy');
 	Auth::routes();
 

@@ -23,7 +23,7 @@
 
 						@foreach ($servers as $serve)
 							<tr>
-								<td> {{$serve -> servidor}}</td>
+								<td  class="text-uppercase"> {{$serve -> servidor}}</td>
 								<td> {{$serve -> ip}}</td>
 								<td>
 									@if ($serve -> updated_at != null)

@@ -32,7 +32,7 @@
 
 						@foreach ($servers as $serve) 
 							<tr>
-								<td> {{$serve -> servidor}}</td>
+								<td class="text-uppercase"> {{$serve -> servidor}}</td>
 								<td> {{$serve -> ip}}</td>
 								<td> 
 									@if ($serve -> updated_at != null)
@@ -49,14 +49,16 @@
 									@endforeach	
 								 </td>
 								 <td>
-							 		<a class="btn btn-xs btn-warning" href="/servidores/{{ $serve->id }}">Editar</a>
+							 		<a class="btn btn-xs btn-warning" href="/servidores/{{ $serve->id }}/edit">Editar</a>
 								 </td>
 								 <td>
 									<form  class="form-inline" method="POST" action="/servidores/{{ $serve->id }}">
 									{{ method_field('DELETE') }}
 							 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
-							 		<button type="submit" class="btn btn-xs btn-danger" onclick="ConfirmDelete()">Excluir</button>
+							 		<button type="submit" class="btn btn-xs btn-danger"'>Excluir</button>
 									</form>
+									
+
 								 </td>
 							</tr>
 						@endforeach

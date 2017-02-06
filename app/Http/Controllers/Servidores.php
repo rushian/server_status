@@ -47,28 +47,14 @@ class Servidores extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request,[
-        //     'servidor' =>  'required|min:3',
-        //     'ip' =>  'required|min:8'
-        // ]);
-        // $servidor = new Servidor($request->all());
         
-// validate
-        // read more on validation at http://laravel.com/docs/validation
-        
-            // store
             $servidor = new Servidor;
             $servidor->servidor       = Input::get('servidor');
             $servidor->ip             = Input::get('ip');
             $servidor->id_usuario     = Input::get('id_usuario');
-
             $servidor->save();
-            // redirect
-            //Session::flash('message', 'Servidor cadastrado com sucesso');
+            
             return Redirect::to('servidores.show');
-           //return "teste";
-        
-
     }
 
     /**
@@ -82,8 +68,6 @@ class Servidores extends Controller
         $servers = Servidor::with('user')->orderBy('servidor')->get();   
         
         return view ('servidores.show', compact('servers'));
-
-        
     }
 
     /**
@@ -92,9 +76,9 @@ class Servidores extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Servidor $servidor)
     {
-        //
+        return view('servidores.edit', compact('servidor'));
     }
 
     /**
@@ -109,6 +93,13 @@ class Servidores extends Controller
         $servidor->update($request->all());
         
         return redirect('servidores');
+    }
+
+    public function atualizar(Request $request, Servidor $servidor)
+    {
+        $servidor->update($request->all());
+        
+        return redirect('servidores.show');
     }
 
     /**
