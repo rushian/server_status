@@ -52,7 +52,7 @@
 							 		<a class="btn btn-xs btn-warning" href="/servidores/{{ $serve->id }}/edit">Editar</a>
 								 </td>
 								 <td>
-									<form  class="form-inline" method="POST" action="/servidores/{{ $serve->id }}">
+									<form  class="form-inline" method="POST" action="/servidores/{{ $serve->id }}" onsubmit="confirm('Tem certeza que deseja excluir?')">
 									{{ method_field('DELETE') }}
 							 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							 		<button type="submit" class="btn btn-xs btn-danger"'>Excluir</button>
