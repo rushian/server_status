@@ -69,7 +69,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Server Status
+                    Server Status -----------------
                 </div>
 
                 <div class="links">

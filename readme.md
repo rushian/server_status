@@ -1,3 +1,17 @@
+Para instalar:
+	<ul>
+	<li>
+	Clone o projeto (git clone url_clone) no seu diretório de desenvolvimento [provavelmente /var/www/]
+	</li>
+	<li>
+	Adicione o arquivo .env com as cofigurações da base de dados.
+	</li>
+	<li>
+	Rode o Composer install para baixar os arquivos necessários
+	</li>
+	
+	</ul>
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
