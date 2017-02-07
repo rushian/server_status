@@ -69,13 +69,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Server Status -----------------
+                    Server Status 
                 </div>
 
                 <div class="links">
                     @if (Route::has('login'))
                             @if (Auth::check())
-                                Seja bem vindo {{ Auth::user()->name }}, acesse a p&aacute;gina inicial:<br><a href="{{ url('/home') }}">Home</a>
+                                !!!!!!!!!! Seja bem vindo {{ Auth::user()->name }}, acesse a p&aacute;gina inicial:<br><a href="{{ url('/home') }}">Home</a>
                             @else
                                 <a href="{{ url('/login') }}">Login</a>
                                 <a href="{{ url('/register') }}">Register</a>

@@ -26,7 +26,6 @@ Route::group(['middleware' => ['web']], function(){
 	Route::post('criarServidor', 'Servidores@store');
 	
 	Route::patch('editarServidor/{servidor}', 'Servidores@atualizar');
-
 	Route::patch('servidores/{servidor}','Servidores@update');
 
 	Route::delete('servidores/{servidor}','Servidores@destroy');

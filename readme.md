@@ -1,15 +1,17 @@
 Para instalar:
 	<ul>
-	<li>
-	Clone o projeto (git clone url_clone) no seu diretório de desenvolvimento [provavelmente /var/www/]
-	</li>
-	<li>
-	Adicione o arquivo .env com as cofigurações da base de dados.
-	</li>
-	<li>
-	Rode o Composer install para baixar os arquivos necessários
-	</li>
-	
+		<li>
+		Clone o projeto (git clone url_clone) no seu diretório de desenvolvimento [provavelmente /var/www/]
+		</li>
+		<li>
+		Adicione o arquivo .env com as cofigurações da base de dados, há um exemplo com o nome de .env.example.
+		</li>
+		<li>
+		Rode o Composer install para baixar os arquivos necessários
+		</li>
+		<li>
+		Caso haja problemas com a key, rode o php artisan key:gen
+		</li>
 	</ul>
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
