@@ -42,11 +42,8 @@
 									@endif
 								</td>
 
-								<td> <?php $user =  DB::table('users')->where('id','=',$serve->id_usuario)->get() ;?>
-
-									@foreach ($user as $u)
-											{{$u -> name}}
-									@endforeach	
+								<td> 
+    									{!! $Usuario = App\User::all()->find($serve->id_usuario)->name !!}
 								 </td>
 								 <td>
 							 		<a class="btn btn-xs btn-warning" href="/servidores/{{ $serve->id }}/edit">Editar</a>

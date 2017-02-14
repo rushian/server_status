@@ -33,11 +33,9 @@
 									@endif
 								</td>
 
-								<td> <?php $user =  DB::table('users')->where('id','=',$serve->id_usuario)->get() ;?>
-
-									@foreach ($user as $u)
-											{{$u -> name}}
-									@endforeach	
+								<td>
+									{!! $Usuario = App\User::all()->find($serve->id_usuario)->name !!}
+								 
 								 </td>
 								 <td>
 									<form  class="form-inline" method="POST" action="/servidores/{{ $serve->id }}">
